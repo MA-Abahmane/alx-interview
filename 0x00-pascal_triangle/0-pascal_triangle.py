@@ -7,7 +7,6 @@ Create a function def pascal_triangle(n): that returns a list of lists of intege
 
 def pascal_triangle(n):
     """ Create Pascal’s triangle """
-
     pascalT = []
     if (n > 0):
         for i in range(n):
