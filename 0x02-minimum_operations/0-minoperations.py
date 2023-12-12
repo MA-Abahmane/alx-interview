@@ -22,22 +22,17 @@ Number of operations: 6
 
 def minOperations(n):
     """ Minimum Operations """
-    if n <= 1:
-        return 0
+    cnt = 0
+    nxt = 'H'
+    body = 'H'
 
-    # Initialize an array to store the minimum operations
-    #  needed for each position
-    dp = [float('inf')] * (n + 1)
+    while (len(body) < n):
+        if (n % len(body) == 0):
+            cnt += 2
+            nxt = body
+            body += body
+        else:
+            cnt += 1
+            body += nxt
 
-    # Base case: 0 operations needed for position 1
-    dp[1] = 0
-
-    # Iterate from position 2 to n
-    for i in range(2, n + 1):
-        # Find factors of i
-        for j in range(1, int(i**0.5) + 1):
-            if i % j == 0:
-                dp[i] = min(dp[i], dp[j] + i // j)
-                dp[i] = min(dp[i], dp[i // j] + j)
-
-    return dp[n] if dp[n] != float('inf') else 0
+    return 0 if len(body) != n else cnt
