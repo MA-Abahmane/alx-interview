@@ -26,6 +26,9 @@ def minOperations(n: int) -> int:
     nxt = 'H'
     body = 'H'
 
+    if (n == 1):
+        return 1
+
     while (len(body) < n):
         if (n % len(body) == 0):
             cnt += 2
