@@ -20,7 +20,7 @@ Number of operations: 6
 """
 
 
-def minOperations(n):
+def minOperations(n: int) -> int:
     """ Minimum Operations """
     cnt = 0
     nxt = 'H'
