@@ -83,5 +83,4 @@ def function():
 
 if __name__ == '__main__':
     """ Import control """
-    # Call the function when the script is executed
     function()
