@@ -12,6 +12,7 @@
 | [0x00-pascal_triangle](https://github.com/MA-Abahmane/alx-interview/tree/main/0x00-pascal_triangle)| Sorted linked list challenge | 
 | [0x01-lockboxes](https://github.com/MA-Abahmane/alx-interview/tree/main/0x01-lockboxes)| Lockboxes challenge | 
 | [0x02-minimum_operations](https://github.com/MA-Abahmane/alx-interview/tree/main/0x02-minimum_operations)| Minimum operations challenge | 
+| [0x03-log_parsing](https://github.com/MA-Abahmane/alx-interview/tree/main/0x03-log_parsing)| Log parsing | 
 
 <br>
 
@@ -20,10 +21,5 @@
 | Tool/Library| 
 | ------------------------------------| 
 | [Python](https://www.python.org/)|
-| [Emacs](https://www.gnu.org/software/emacs/)| 
 | [Git](https://git-scm.com/)| 
-| [Github](https://github.com/) | 
 | [Bash](https://www.gnu.org/software/bash/)| 
-| [Vagrant](https://www.vagrantup.com/)|
-| [Pycharm Pro](https://www.jetbrains.com/pycharm/)|
-| [jupyter](https://jupyter.org/)|
