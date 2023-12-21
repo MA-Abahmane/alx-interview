@@ -63,14 +63,14 @@ def function() -> None:
                 # If the status code is in the list; update count
                 if status_code in stat_count:
                     stat_count[status_code] += 1
-            except BaseException:
+            except Exception:
                 pass
 
             try:
                 # Attempt to extract the file size from the line and
                 # update total file size
                 file_size += int(data[-1])
-            except BaseException:
+            except Exception:
                 pass
 
             # Print statistics every 10 lines
@@ -82,7 +82,7 @@ def function() -> None:
         printer(stat_count, file_size)
 
     except KeyboardInterrupt:
-        # Handle keyboard interruption and print final statistics
+        # Handle keyboard interruption (Ctrl+C) and print final statistics
         printer(stat_count, file_size)
         raise
 
