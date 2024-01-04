@@ -8,15 +8,18 @@ Mission V: Write a method that determines if a given
 
 def validUTF8(data):
     """ UTF-8 validator """
-    # Variable to track the number of trailing bytes needed for the current character
+    # Variable to track the number of trailing bytes
+    # needed for the current character
     trailing_bytes = 0
 
     # Iterate through each integer in the data
     for num in data:
-        # Extract the least significant 8 bits of the integer (equivalent to a byte)
+        # Extract the least significant 8 bits
+        # of the integer (equivalent to a byte)
         byte = num & 0xFF
 
-        # If trailing_bytes is not zero, we are in the middle of a multi-byte character
+        # If trailing_bytes is not zero, we are
+        # in the middle of a multi-byte character
         if trailing_bytes:
             # Check if the current byte is a valid trailing byte
             if byte >> 6 != 2:
@@ -24,7 +27,8 @@ def validUTF8(data):
             trailing_bytes -= 1
             continue
 
-        # Determine the number of leading 1 bits to identify the start of a multi-byte character
+        # Determine the number of leading 1 bits to identify
+        # the start of a multi-byte character
         while (1 << (7 - trailing_bytes)) & byte:
             trailing_bytes += 1
 
