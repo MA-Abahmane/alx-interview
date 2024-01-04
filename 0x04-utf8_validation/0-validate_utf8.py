@@ -8,38 +8,32 @@ Mission V: Write a method that determines if a given
 
 def validUTF8(data):
     """ UTF-8 validator """
-    # Initialize a variable to keep track of the number of trailing bytes
+    # Variable to track the number of trailing bytes needed for the current character
     trailing_bytes = 0
 
     # Iterate through each integer in the data
     for num in data:
-        # Check if the most significant bit is set
-        if num & 0x80 == 0:
-            # If it's the start of a new character, reset trailing_bytes
-            if trailing_bytes != 0:
+        # Extract the least significant 8 bits of the integer (equivalent to a byte)
+        byte = num & 0xFF
+
+        # If trailing_bytes is not zero, we are in the middle of a multi-byte character
+        if trailing_bytes:
+            # Check if the current byte is a valid trailing byte
+            if byte >> 6 != 2:
                 return False
-        elif num & 0xC0 == 0x80:
-            # If it's a trailing byte, decrement trailing_bytes
             trailing_bytes -= 1
-            if trailing_bytes < 0:
-                return False
-        elif num & 0xE0 == 0xC0:
-            # If it's the start of a 2-byte character, set trailing_bytes to 1
-            trailing_bytes = 1
-        elif num & 0xF0 == 0xE0:
-            # If it's the start of a 3-byte character, set trailing_bytes to 2
-            trailing_bytes = 2
-        elif num & 0xF8 == 0xF0:
-            # If it's the start of a 4-byte character, set trailing_bytes to 3
-            trailing_bytes = 3
-        else:
-            # If none of the conditions are met, it's an invalid start byte
+            continue
+
+        # Determine the number of leading 1 bits to identify the start of a multi-byte character
+        while (1 << (7 - trailing_bytes)) & byte:
+            trailing_bytes += 1
+
+        # Validate the number of leading 1 bits and trailing bytes
+        if trailing_bytes == 1 or trailing_bytes > 4:
             return False
 
-        # Check if there are enough trailing bytes
-        if trailing_bytes > 0 and len(data) <= trailing_bytes:
-            return False
+        # Adjust trailing_bytes for the next iteration
+        trailing_bytes = max(trailing_bytes - 1, 0)
 
-    # After iterating through all bytes, check if there are any incomplete characters
+    # Check if there are no incomplete characters at the end of the data
     return trailing_bytes == 0
-
