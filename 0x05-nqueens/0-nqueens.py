@@ -7,8 +7,6 @@ N Queens problem solver
 import sys
 
 
-import sys
-
 def solve_nqueens(size, current_row):
     # Initialize the solver with an empty solution
     partial_solutions = [[]]
