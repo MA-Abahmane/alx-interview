@@ -7,51 +7,59 @@ N Queens problem solver
 import sys
 
 
-def is_safe(board, row, col):
-    """ Check if it's safe to place a queen in a given position """
-    for i in range(row):
-        if board[i] == col or \
-           board[i] - i == col - row or \
-           board[i] + i == col + row:
-            return False
-    return True
+import sys
 
-def solve_nqueens(N, row, board, solutions):
-    """ Recursive function to solve N Queens problem """
-    if row == N:
-        solutions.append(list(board))
-        return
+def solve_nqueens(size, current_row):
+    # Initialize the solver with an empty solution
+    partial_solutions = [[]]
+    for row in range(current_row):
+        # Place queens for each row
+        partial_solutions = extend_solutions(row, size, partial_solutions)
+    return partial_solutions
 
-    for col in range(N):
-        if is_safe(board, row, col):
-            board[row] = col
-            solve_nqueens(N, row + 1, board, solutions)
+def extend_solutions(row, size, previous_solutions):
+    new_solutions = []
+    for solution in previous_solutions:
+        for column in range(size):
+            if is_safe_placement(row, column, solution):
+                # If it's safe to place the queen, add the solution
+                new_solutions.append(solution + [column])
+    return new_solutions
 
-def print_solutions(solutions):
-    """Print the solutions in the specified format."""
-    for solution in solutions:
-        print([[i, j] for i, j in enumerate(solution)])
+def is_safe_placement(row, column, solution):
+    # Check if it's safe to place a queen at position (row, column) in the solution
+    if column in solution:
+        return False
+    else:
+        # Check for diagonal conflicts
+        return all(abs(solution[r] - column) != row - r for r in range(row))
 
-def nqueens(N):
-    """ Main function to solve N Queens problem """
-    try:
-        N = int(N)
-        if N < 4:
-            raise ValueError("N must be at least 4")
-    except ValueError:
+def initialize_board_size():
+    # Handle command-line arguments and initialize the size of the chessboard
+    if len(sys.argv) != 2:
+        print("Usage: nqueens N")
+        sys.exit(1)
+    if sys.argv[1].isdigit():
+        board_size = int(sys.argv[1])
+    else:
         print("N must be a number")
         sys.exit(1)
+    if board_size < 4:
+        print("N must be at least 4")
+        sys.exit(1)
+    return board_size
 
-    board = [-1] * N
-    solutions = []
+def print_solutions(solutions):
+    # Print the solutions in the specified format
+    for solution in solutions:
+        formatted_solution = [[row, column] for row, column in enumerate(solution)]
+        print(formatted_solution)
 
-    solve_nqueens(N, 0, board, solutions)
-
+def nqueens_solver():
+    # Main function to solve and print N Queens problem
+    board_size = initialize_board_size()
+    solutions = solve_nqueens(board_size, board_size)
     print_solutions(solutions)
 
-if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: ./0-nqueens.py N")
-        sys.exit(1)
-
-    nqueens(sys.argv[1])
+if __name__ == '__main__':
+    nqueens_solver()
