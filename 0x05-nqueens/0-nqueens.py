@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 
 """
 N Queens problem solver
@@ -6,8 +6,9 @@ N Queens problem solver
 
 import sys
 
+
 def is_safe(board, row, col):
-    """Check if it's safe to place a queen in a given position."""
+    """ Check if it's safe to place a queen in a given position """
     for i in range(row):
         if board[i] == col or \
            board[i] - i == col - row or \
@@ -16,7 +17,7 @@ def is_safe(board, row, col):
     return True
 
 def solve_nqueens(N, row, board, solutions):
-    """Recursive function to solve N Queens problem."""
+    """ Recursive function to solve N Queens problem """
     if row == N:
         solutions.append(list(board))
         return
@@ -32,7 +33,7 @@ def print_solutions(solutions):
         print([[i, j] for i, j in enumerate(solution)])
 
 def nqueens(N):
-    """Main function to solve N Queens problem."""
+    """ Main function to solve N Queens problem """
     try:
         N = int(N)
         if N < 4:
