@@ -13,7 +13,8 @@
 | [0x01-lockboxes](https://github.com/MA-Abahmane/alx-interview/tree/main/0x01-lockboxes)| Lockboxes challenge | 
 | [0x02-minimum_operations](https://github.com/MA-Abahmane/alx-interview/tree/main/0x02-minimum_operations)| Minimum operations challenge | 
 | [0x03-log_parsing](https://github.com/MA-Abahmane/alx-interview/tree/main/0x03-log_parsing)| Log parsing | 
-
+| [0x04-utf8_validation](https://github.com/MA-Abahmane/alx-interview/tree/main/0x04-utf8_validation)| UTF-8 Validation |
+| [0x05-nqueens](https://github.com/MA-Abahmane/alx-interview/tree/main/0x05-nqueens)| N queens |
 <br>
 
 ### Tool & Library Used
