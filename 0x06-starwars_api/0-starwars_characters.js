@@ -3,13 +3,14 @@
 // Import the 'request' module for making HTTP requests
 const request = require('request');
 
-// Define the URL for the Star Wars API (SWAPI) films endpoint with the film ID from the command line argument
+// Construct the URL for the Star Wars API (SWAPI) films endpoint using the film ID from the command line argument
 const filmUrl = `https://swapi-api.hbtn.io/api/films/${process.argv[2]}/`;
 
 // Make a request to the SWAPI films endpoint
 request(filmUrl, (error, response, body) => {
   // Check for errors in the HTTP request
   if (error) {
+    // Log the error and exit the program
     console.error('Error:', error);
     return;
   }
@@ -26,6 +27,7 @@ request(filmUrl, (error, response, body) => {
     request(characterUrl, (error, response, body) => {
       // Check for errors in the HTTP request
       if (error) {
+        // Log the error and exit the program
         console.error('Error:', error);
         return;
       }
