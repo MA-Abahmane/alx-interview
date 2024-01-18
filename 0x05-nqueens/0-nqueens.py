@@ -59,7 +59,7 @@ def print_solutions(solutions):
     for solution in solutions:
         formatted_solution = [[row, column] for row, column
                               in enumerate(solution)]
-        print(formatted_solution)
+        print(formatted_solution) 
 
 
 def nqueens_solver():
