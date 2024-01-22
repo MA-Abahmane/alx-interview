@@ -20,4 +20,3 @@ def rotate_2d_matrix(matrix):
 
     for lst in matrix:
         lst.reverse()
-
