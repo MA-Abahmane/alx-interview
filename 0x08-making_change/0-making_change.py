@@ -19,4 +19,4 @@ def makeChange(coins, total):
             dp[amount] = min(dp[amount], dp[amount - coin] + 1)
 
     # If dp[total] is still infinity, it means the total cannot be met
-    return dp[total] if dp[total] != float('inf') else -1\
+    return dp[total] if dp[total] != float('inf') else -1
