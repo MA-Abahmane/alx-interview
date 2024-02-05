@@ -15,6 +15,7 @@
 | [0x03-log_parsing](https://github.com/MA-Abahmane/alx-interview/tree/main/0x03-log_parsing)| Log parsing | 
 | [0x04-utf8_validation](https://github.com/MA-Abahmane/alx-interview/tree/main/0x04-utf8_validation)| UTF-8 Validation |
 | [0x05-nqueens](https://github.com/MA-Abahmane/alx-interview/tree/main/0x05-nqueens)| N queens |
+| [0x08-making_change](https://github.com/MA-Abahmane/alx-interview/tree/main/0x08-making_change)| Making Change |
 <br>
 
 ### Tool & Library Used
