@@ -24,22 +24,26 @@ def island_perimeter(grid):
         for j in range(len(grid[0])):
             if grid[i][j]:
                 if i > 0:
-                    if not grid[i - 1][j]: perimeter += 1
+                    if not grid[i - 1][j]:
+                        perimeter += 1
                 else:
                     perimeter += 1
 
                 try:
-                    if not grid[i + 1][j]: perimeter += 1
+                    if not grid[i + 1][j]:
+                        perimeter += 1
                 except IndexError:
                     perimeter += 1
 
                 if j > 0:
-                    if not grid[i][j - 1]: perimeter += 1
+                    if not grid[i][j - 1]:
+                        perimeter += 1
                 else:
                     perimeter += 1
 
                 try:
-                    if not grid[i][j + 1]: perimeter += 1
+                    if not grid[i][j + 1]:
+                        perimeter += 1
                 except IndexError:
                     perimeter += 1
     return perimeter
