@@ -43,7 +43,3 @@ def island_perimeter(grid):
                 except IndexError:
                     perimeter += 1
     return perimeter
-
-
-grid = [[0,1,0,0],[1,1,1,0],[0,1,0,0],[1,1,0,0]]
-print(island_perimeter(grid))
