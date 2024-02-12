@@ -16,6 +16,7 @@
 | [0x04-utf8_validation](https://github.com/MA-Abahmane/alx-interview/tree/main/0x04-utf8_validation)| UTF-8 Validation |
 | [0x05-nqueens](https://github.com/MA-Abahmane/alx-interview/tree/main/0x05-nqueens)| N queens |
 | [0x08-making_change](https://github.com/MA-Abahmane/alx-interview/tree/main/0x08-making_change)| Making Change |
+| [0x09-island_perimeter](https://github.com/MA-Abahmane/alx-interview/tree/main/0x09-island_perimeter)| Island Perimeter |
 <br>
 
 ### Tool & Library Used
