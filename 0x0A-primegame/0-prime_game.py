@@ -8,8 +8,6 @@ set and removing that number and its multiples from the set. The player that
 cannot make a move loses the game.
 """
 
-from isPrime import isPrime
-
 
 def isWinner(x, nums):
     """ Determine the winner, Maria or Ben. """
@@ -56,7 +54,6 @@ def isWinner(x, nums):
     else:
         return None
 
-
 def clearMultiples(lst, n):
     """ removing that number and its multiples from the list """
     try:
@@ -65,3 +62,13 @@ def clearMultiples(lst, n):
             n += n
     except ValueError:
         return 1
+
+def isPrime(n):
+    """ check if number prime """
+    if n > 1:  
+        for i in range(2,n):  
+            if (n % i) == 0:  
+                return False
+        return True
+    else:
+        return False
