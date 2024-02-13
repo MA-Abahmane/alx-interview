@@ -48,7 +48,7 @@ def isWinner(x, nums):
             players['Maria'] += 1
             #print('Maria + 1')
 
-    print(players)
+    #print(players)
     if players['Ben'] < players['Maria']:
         return 'Maria'
     elif players['Ben'] > players['Maria']:
@@ -57,11 +57,10 @@ def isWinner(x, nums):
         return None
 
 
-
 def clearMultiples(lst, n):
     """ removing that number and its multiples from the list """
     try:
-        while True:
+        while True:  
             lst.remove(n)
             n += n
     except ValueError:
