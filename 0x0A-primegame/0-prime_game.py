@@ -13,7 +13,6 @@ def isWinner(x, nums):
     """ Determine the winner, Maria or Ben. """
     players = {'Ben': 0, 'Maria': 0}
 
-
     for rnd in range(x):
         n = nums[rnd]
 
@@ -22,7 +21,8 @@ def isWinner(x, nums):
             continue
 
         lst = []
-        for i in range(n): lst.append(i + 1)
+        for i in range(n):
+            lst.append(i + 1)
 
         turn = 0
         while True:
@@ -41,12 +41,9 @@ def isWinner(x, nums):
 
         if (turn % 2 == 0):
             players['Ben'] += 1
-            #print('Ban + 1')
         else:
             players['Maria'] += 1
-            #print('Maria + 1')
 
-    #print(players)
     if players['Ben'] < players['Maria']:
         return 'Maria'
     elif players['Ben'] > players['Maria']:
@@ -54,20 +51,22 @@ def isWinner(x, nums):
     else:
         return None
 
+
 def clearMultiples(lst, n):
     """ removing that number and its multiples from the list """
     try:
-        while True:  
+        while True:
             lst.remove(n)
             n += n
     except ValueError:
         return 1
 
+
 def isPrime(n):
     """ check if number prime """
-    if n > 1:  
-        for i in range(2,n):  
-            if (n % i) == 0:  
+    if n > 1:
+        for i in range(2, n):
+            if (n % i) == 0:
                 return False
         return True
     else:
