@@ -15,7 +15,7 @@ def isWinner(x, nums):
     if nums == []:
         return None
 
-    for rnd in range(x):
+    for rnd in range(len(nums)):
         n = nums[rnd]
 
         if n == 1:
