@@ -12,10 +12,10 @@ def isWinner(x, nums):
     """ Determine the winner, Maria or Ben. """
     players = {'Ben': 0, 'Maria': 0}
 
-    if nums == []:
+    if nums == [] or x <= 0:
         return None
 
-    for rnd in range(len(nums)):
+    for rnd in range(x):
         n = nums[rnd]
 
         if n == 1:
