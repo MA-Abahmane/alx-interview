@@ -12,7 +12,7 @@ def isWinner(x, nums):
     """ Determine the winner, Maria or Ben. """
     players = {'Ben': 0, 'Maria': 0}
 
-    if nums == [] or x <= 0:
+    if nums == None or x <= 0 or x != len(nums):
         return None
 
     for rnd in range(x):
