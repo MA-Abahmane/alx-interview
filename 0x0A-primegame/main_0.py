@@ -7,6 +7,7 @@ print("Winner: {}".format(isWinner(5, [2, 5, 1, 4, 3])))
 
 print("Winner: {}".format(isWinner(3, [4, 5, 1])))
 print("Winner: {}".format(isWinner(5, [2, 5, 1, 4, 3])))
+print("Winner: {}".format(isWinner(5, [2, 4, 6, 8, 10])))
 print("Winner: {}".format(isWinner(6, [2, 5, 4, 3, 5, 9])))
 print("Winner: {}".format(isWinner(6, [2, 5, 4, 3, 5, 77])))
 print("Winner: {}".format(isWinner(8, [2, 5, 4, 3, 5, 77])))
