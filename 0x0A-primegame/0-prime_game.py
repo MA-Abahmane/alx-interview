@@ -1,16 +1,19 @@
 #!/usr/bin/python3
 """
     > Prime Game <
-    Maria and Ben are playing a game. Given a set of consecutive integers starting
-    from 1 up to and including n, they take turns choosing a prime number from the
-    set and removing that number and its multiples from the set. The player that
-    cannot make a move loses the game.
+    Maria and Ben are playing a game. Given a set of consecutive integers
+    starting from 1 up to and including n, they take turns choosing a prime
+    number from the set and removing that number and its multiples from the
+    set. The player that cannot make a move loses the game.
 """
 
 
 def isWinner(x, nums):
     """ Determine the winner, Maria or Ben. """
     players = {'Ben': 0, 'Maria': 0}
+
+    if nums == []:
+        return None
 
     for rnd in range(x):
         n = nums[rnd]
